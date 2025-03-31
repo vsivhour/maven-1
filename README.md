@@ -1,60 +1,42 @@
-# Simple Desktop Application
+# Simple Desktop App Setup Guide
 
-This is a simple Java Swing desktop application built with Maven. It demonstrates a basic GUI with a button that counts clicks.
-
-## Project Structure
-
-The project follows the standard Maven directory structure:
-
-```
-simple-desktop-app/
-├── src/
-│   ├── main/java/com/example/
-│   │   └── App.java
-│   └── test/java/com/example/
-│       └── AppTest.java
-└── pom.xml
-```
-
-## Requirements
-
-- Java 21
+## Prerequisites
+- Java JDK 8+
 - Maven
+- Docker
+- Git
 
-## Building the Application
+## 1. Create Maven Project
+```
+mvn archetype:generate -DgroupId=com.example -DartifactId=simple-desktop-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
 
-To build the application, run:
+## 2. Git Setup
+```
+git init
+git add .
+git commit -m "Initial commit"
+```
 
-```bash
+## 3. Run Java Application
+```
+mvn clean install
+mvn exec:java -Dexec.mainClass="com.example.App"
+```
+
+## 4. Docker Setup for Jenkins
+```
+docker-compose up -d
+```
+
+## 5. Jenkins Configuration
+1. Access Jenkins at http://localhost:8080
+2. Install suggested plugins
+3. Create admin user
+4. Configure Maven in Global Tools Configuration
+5. Create new Pipeline job pointing to this repository
+
+## 6. Build Pipeline
+```
 mvn clean package
 ```
-
-This will create a JAR file in the `target` directory.
-
-## Running the Application
-
-You can run the application using Maven:
-
-```bash
-mvn exec:java
-```
-
-Or directly using the JAR file:
-
-```bash
-java -jar target/simple-desktop-app-1.0-SNAPSHOT.jar
-```
-
-## CI/CD with Jenkins
-
-This project is configured with a Jenkins pipeline that:
-
-1. Clones the repository from GitHub
-2. Builds the project using Maven
-3. Runs the application
-4. Polls for changes in the GitHub repository
-5. Sends email notifications on build failures
-
-## License
-
-MIT
