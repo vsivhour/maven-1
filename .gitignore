@@ -1,0 +1,63 @@
+# Maven specific
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs
+hs_err_pid*
+
+# Mac OS specific files
+.DS_Store
+
+# Jenkins related
+jenkins_home/
+!jenkins_home/jobs/
+jenkins_home/jobs/*/builds/
+jenkins_home/jobs/*/last*
+jenkins_home/jobs/*/next*
+jenkins_home/war/
+jenkins_home/plugins/
+jenkins_home/.java/
+jenkins_home/secrets/
+jenkins_home/updates/
+jenkins_home/users/
+
+# MySQL data
+mysql/
+*.dblwr
+*.ibd
+ibdata*
+ibtmp*
+undo_*
+binlog.*
+*.pem
